@@ -49,7 +49,7 @@ namespace cai
 
         DoubleBoll[] LoadAll()
         {
-            return DBHelper.GetALL<DoubleBoll>(_db, "_date");
+            return DBHelper.GetALL<DoubleBoll>(_db, "_No");
         }
 
         private void Add_Click(object sender, EventArgs e)
