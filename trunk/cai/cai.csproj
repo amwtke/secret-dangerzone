@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4EDB4ED1-F511-4C90-AC44-AC2B77D79A78}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>cai</RootNamespace>
+    <AssemblyName>cai</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Db4objects.Db4o, Version=8.0.160.14822, Culture=neutral, PublicKeyToken=6199cd4f203aa8eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Db4objects.Db4o.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="netchartdir">
+      <HintPath>D:\Program Files (x86)\ChartDirector\bin\netchartdir.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Compare\DoubleColorCompare.cs" />
+    <Compile Include="Compare\ICaiCompare.cs" />
+    <Compile Include="DataModel\IDataType.cs" />
+    <Compile Include="Helper\HttpHelper.cs" />
+    <Compile Include="reports\ParamViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reports\ParamViewer1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ParamViewer.resx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\frmzoomscrolldemo2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reports\frmzoomscrolldemo21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>frmzoomscrolldemo2.resx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\frmzoomscrolldemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reports\frmzoomscrolldemo1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>frmzoomscrolldemo.resx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\frmfinancedemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reports\frmfinancedemo1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>frmfinancedemo.resx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\frmrealtimedemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reports\frmrealtimedemo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>frmrealtimedemo.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\CommonHelper.cs" />
+    <Compile Include="DataModel\DoubleBoll.cs" />
+    <Compile Include="Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detail.Designer.cs">
+      <DependentUpon>Detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compare\DoubleBallCompareImp.cs" />
+    <Compile Include="InputMethod\IProcessText.cs" />
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="InputMethod\TextProcessImp.cs" />
+    <Compile Include="reports\anglepie.cs" />
+    <Compile Include="reports\axisscale.cs" />
+    <Compile Include="reports\background.cs" />
+    <Compile Include="reports\binaryseries.cs" />
+    <Compile Include="reports\boxwhisker.cs" />
+    <Compile Include="reports\boxwhisker2.cs" />
+    <Compile Include="reports\bubble.cs" />
+    <Compile Include="reports\bubblescale.cs" />
+    <Compile Include="reports\builtinsymbols.cs" />
+    <Compile Include="reports\candlestick.cs" />
+    <Compile Include="reports\ChartExplorer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reports\circlelabelpie.cs" />
+    <Compile Include="reports\colorbar.cs" />
+    <Compile Include="reports\colorgantt.cs" />
+    <Compile Include="reports\compactline.cs" />
+    <Compile Include="reports\concentric.cs" />
+    <Compile Include="reports\cone.cs" />
+    <Compile Include="reports\confidenceband.cs" />
+    <Compile Include="reports\contour.cs" />
+    <Compile Include="reports\contourinterpolate.cs" />
+    <Compile Include="reports\curvefitting.cs" />
+    <Compile Include="reports\customsymbolline.cs" />
+    <Compile Include="reports\cylinderbar.cs" />
+    <Compile Include="reports\cylinderlightbar.cs" />
+    <Compile Include="reports\datatable.cs" />
+    <Compile Include="reports\datatable2.cs" />
+    <Compile Include="reports\DemoModule.cs" />
+    <Compile Include="reports\deptharea.cs" />
+    <Compile Include="reports\depthbar.cs" />
+    <Compile Include="reports\donut.cs" />
+    <Compile Include="reports\donutshading.cs" />
+    <Compile Include="reports\donutwidth.cs" />
+    <Compile Include="reports\dualhbar.cs" />
+    <Compile Include="reports\dualxaxis.cs" />
+    <Compile Include="reports\dualyaxis.cs" />
+    <Compile Include="reports\enhancedarea.cs" />
+    <Compile Include="reports\errline.cs" />
+    <Compile Include="reports\explodedpie.cs" />
+    <Compile Include="reports\finance.cs" />
+    <Compile Include="reports\finance2.cs" />
+    <Compile Include="reports\financedemo.cs" />
+    <Compile Include="reports\floatingbox.cs" />
+    <Compile Include="reports\fontpie.cs" />
+    <Compile Include="reports\fontxy.cs" />
+    <Compile Include="reports\fourq.cs" />
+    <Compile Include="reports\funnel.cs" />
+    <Compile Include="reports\gantt.cs" />
+    <Compile Include="reports\gapbar.cs" />
+    <Compile Include="reports\glasslightbar.cs" />
+    <Compile Include="reports\glassmultibar.cs" />
+    <Compile Include="reports\gradientbar.cs" />
+    <Compile Include="reports\gradientmultibar.cs" />
+    <Compile Include="reports\hbar.cs" />
+    <Compile Include="reports\hlinearmeter.cs" />
+    <Compile Include="reports\hloc.cs" />
+    <Compile Include="reports\iconameter.cs" />
+    <Compile Include="reports\icondonut.cs" />
+    <Compile Include="reports\iconpie.cs" />
+    <Compile Include="reports\iconpie2.cs" />
+    <Compile Include="reports\layergantt.cs" />
+    <Compile Include="reports\legendpie.cs" />
+    <Compile Include="reports\legendpie2.cs" />
+    <Compile Include="reports\linearzonemeter.cs" />
+    <Compile Include="reports\linecompare.cs" />
+    <Compile Include="reports\linefill.cs" />
+    <Compile Include="reports\logaxis.cs" />
+    <Compile Include="reports\markbar.cs" />
+    <Compile Include="reports\markzone.cs" />
+    <Compile Include="reports\markzone2.cs" />
+    <Compile Include="reports\missingpoints.cs" />
+    <Compile Include="reports\multiameter.cs" />
+    <Compile Include="reports\multiaxes.cs" />
+    <Compile Include="reports\multibar.cs" />
+    <Compile Include="reports\multicylinder.cs" />
+    <Compile Include="reports\multidepthpie.cs" />
+    <Compile Include="reports\multihmeter.cs" />
+    <Compile Include="reports\multiline.cs" />
+    <Compile Include="reports\multipie.cs" />
+    <Compile Include="reports\multiradar.cs" />
+    <Compile Include="reports\multishapebar.cs" />
+    <Compile Include="reports\multistackbar.cs" />
+    <Compile Include="reports\multisymbolline.cs" />
+    <Compile Include="reports\multivmeter.cs" />
+    <Compile Include="reports\overlapbar.cs" />
+    <Compile Include="reports\paramcurve.cs" />
+    <Compile Include="reports\pareto.cs" />
+    <Compile Include="reports\patternarea.cs" />
+    <Compile Include="reports\percentarea.cs" />
+    <Compile Include="reports\percentbar.cs" />
+    <Compile Include="reports\pieshading.cs" />
+    <Compile Include="reports\polararea.cs" />
+    <Compile Include="reports\polarbubble.cs" />
+    <Compile Include="reports\polarline.cs" />
+    <Compile Include="reports\polarscatter.cs" />
+    <Compile Include="reports\polarspline.cs" />
+    <Compile Include="reports\polarvector.cs" />
+    <Compile Include="reports\polarzones.cs" />
+    <Compile Include="reports\polarzones2.cs" />
+    <Compile Include="reports\polygonbar.cs" />
+    <Compile Include="reports\posnegbar.cs" />
+    <Compile Include="reports\posnegwaterfall.cs" />
+    <Compile Include="reports\pyramidelevation.cs" />
+    <Compile Include="reports\pyramidgap.cs" />
+    <Compile Include="reports\pyramidrotation.cs" />
+    <Compile Include="reports\realtimedemo.cs" />
+    <Compile Include="reports\rose.cs" />
+    <Compile Include="reports\rotatedarea.cs" />
+    <Compile Include="reports\rotatedline.cs" />
+    <Compile Include="reports\rotatedpyramid.cs" />
+    <Compile Include="reports\roundmeter.cs" />
+    <Compile Include="reports\scatter.cs" />
+    <Compile Include="reports\scattercontour.cs" />
+    <Compile Include="reports\scatterlabels.cs" />
+    <Compile Include="reports\scattersurface.cs" />
+    <Compile Include="reports\scattersymbols.cs" />
+    <Compile Include="reports\scattertrend.cs" />
+    <Compile Include="reports\semicirclemeter.cs" />
+    <Compile Include="reports\shadowpie.cs" />
+    <Compile Include="reports\sidelabelpie.cs" />
+    <Compile Include="reports\simplearea.cs" />
+    <Compile Include="reports\simplebar.cs" />
+    <Compile Include="reports\simpleline.cs" />
+    <Compile Include="reports\simplepie.cs" />
+    <Compile Include="reports\simplepyramid.cs" />
+    <Compile Include="reports\simpleradar.cs" />
+    <Compile Include="reports\smoothcontour.cs" />
+    <Compile Include="reports\softlightbar.cs" />
+    <Compile Include="reports\softmultibar.cs" />
+    <Compile Include="reports\splineline.cs" />
+    <Compile Include="reports\squareameter.cs" />
+    <Compile Include="reports\stackedarea.cs" />
+    <Compile Include="reports\stackedbar.cs" />
+    <Compile Include="reports\stackradar.cs" />
+    <Compile Include="reports\stackrose.cs" />
+    <Compile Include="reports\stepline.cs" />
+    <Compile Include="reports\surface.cs" />
+    <Compile Include="reports\surface2.cs" />
+    <Compile Include="reports\surface3.cs" />
+    <Compile Include="reports\surfaceaxis.cs" />
+    <Compile Include="reports\surfacelighting.cs" />
+    <Compile Include="reports\surfaceperspective.cs" />
+    <Compile Include="reports\surfaceshading.cs" />
+    <Compile Include="reports\surfacewireframe.cs" />
+    <Compile Include="reports\symbolline.cs" />
+    <Compile Include="reports\symbolline2.cs" />
+    <Compile Include="reports\texturedonut.cs" />
+    <Compile Include="reports\threedanglepie.cs" />
+    <Compile Include="reports\threedarea.cs" />
+    <Compile Include="reports\threedbar.cs" />
+    <Compile Include="reports\threedbubble.cs" />
+    <Compile Include="reports\threedbubble2.cs" />
+    <Compile Include="reports\threedbubble3.cs" />
+    <Compile Include="reports\threeddepthpie.cs" />
+    <Compile Include="reports\threeddonut.cs" />
+    <Compile Include="reports\threeddonutshading.cs" />
+    <Compile Include="reports\threedline.cs" />
+    <Compile Include="reports\threedpie.cs" />
+    <Compile Include="reports\threedpieshading.cs" />
+    <Compile Include="reports\threedpyramid.cs" />
+    <Compile Include="reports\threedstackarea.cs" />
+    <Compile Include="reports\ticks.cs" />
+    <Compile Include="reports\trendline.cs" />
+    <Compile Include="reports\unevenpoints.cs" />
+    <Compile Include="reports\varwidthbar.cs" />
+    <Compile Include="reports\vector.cs" />
+    <Compile Include="reports\vlinearmeter.cs" />
+    <Compile Include="reports\waterfall.cs" />
+    <Compile Include="reports\wideameter.cs" />
+    <Compile Include="reports\xyline.cs" />
+    <Compile Include="reports\xzonecolor.cs" />
+    <Compile Include="reports\yzonecolor.cs" />
+    <Compile Include="reports\zoomscrolldemo.cs" />
+    <Compile Include="reports\zoomscrolldemo2.cs" />
+    <EmbeddedResource Include="Detail.resx">
+      <DependentUpon>Detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\ParamViewer.resx">
+      <DependentUpon>ParamViewer.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ParamViewer1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\frmzoomscrolldemo2.resx">
+      <DependentUpon>frmzoomscrolldemo2.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmzoomscrolldemo21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\frmzoomscrolldemo.resx">
+      <DependentUpon>frmzoomscrolldemo.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmzoomscrolldemo1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\frmfinancedemo.resx">
+      <DependentUpon>frmfinancedemo.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmfinancedemo1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\frmrealtimedemo.resx">
+      <DependentUpon>frmrealtimedemo.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmrealtimedemo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="reports\ChartExplorer.resx">
+      <DependentUpon>ChartExplorer.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\DoubleBoll.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Algorithm\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="libs\Db4objects.Db4o.dll" />
+    <Content Include="libs\Db4objects.Db4o.xml" />
+    <Content Include="libs\HtmlAgilityPack.dll" />
+    <Content Include="libs\HtmlAgilityPack.XML" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
