@@ -39,7 +39,7 @@ namespace cai
 
         void LoadData()
         {
-            textbox_date.Text       = _data.KaiJiangRiQi.ToString();
+            textbox_date.Text       = _data.OpenDate.ToString();
             textBox_fBonus.Text     = _data.TouJiang.ToString();
             textBox_fNo.Text        = _data.TouJiangZhuShu.ToString();
             textBox_qi.Text         = _data.QiShu.ToString();
@@ -64,7 +64,7 @@ namespace cai
             {
                 //Update
                 DoubleBoll newOne = new DoubleBoll();
-                newOne.KaiJiangRiQi = DateTime.Parse(textbox_date.Text);
+                newOne.OpenDate = DateTime.Parse(textbox_date.Text);
                 newOne.TouJiang = int.Parse(textBox_fBonus.Text);
                 newOne.TouJiangZhuShu = int.Parse(textBox_fNo.Text);
                 newOne.QiShu = textBox_qi.Text;
@@ -80,12 +80,12 @@ namespace cai
                 newOne.Red5 = int.Parse(Red5.Text);
                 newOne.Red6 = int.Parse(Red6.Text);
                 newOne.Blue = int.Parse(Blue1.Text);
-                CommonHelper.UpdateFromDB<DoubleBoll>(MainWindow._db, _data,newOne);
+                DBHelper.UpdateFromDB(MainWindow._db,newOne);
             }
             else
             {
                 _data = new DoubleBoll();//ADD
-                _data.KaiJiangRiQi = DateTime.Parse(textbox_date.Text);
+                _data.OpenDate = DateTime.Parse(textbox_date.Text);
                 _data.TouJiang = int.Parse(textBox_fBonus.Text.Replace(",",string.Empty));
                 _data.TouJiangZhuShu = int.Parse(textBox_fNo.Text);
                 _data.QiShu = textBox_qi.Text;
@@ -101,7 +101,7 @@ namespace cai
                 _data.Red5 = int.Parse(Red5.Text);
                 _data.Red6 = int.Parse(Red6.Text);
                 _data.Blue = int.Parse(Blue1.Text);
-                CommonHelper.SaveToDB(MainWindow._db, _data);
+                DBHelper.SaveToDB(MainWindow._db, _data,true);
             }
 
         }

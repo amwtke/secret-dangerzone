@@ -14,7 +14,15 @@ namespace cai
 {
     public partial class MainWindow : Form
     {
-        public static IObjectContainer _db = CommonHelper.InitDB4O("Cai.yap", typeof(DoubleBoll));
+        static log4net.ILog LOGGER = null;
+        static MainWindow()
+        {
+            if (LOGGER == null)
+            {
+                LOGGER = log4net.LogManager.GetLogger(typeof(MainWindow));
+            }
+        }
+        public static IObjectContainer _db = DBHelper.InitDB4O("Cai.yap", typeof(DoubleBoll));
         DoubleBoll[] all;
         public MainWindow()
         {
@@ -27,22 +35,21 @@ namespace cai
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(_db==null)
-                _db = CommonHelper.InitDB4O("Cai.yap", typeof(DoubleBoll));
-            TextProcessToDB4OImp _textProcessImp = new TextProcessToDB4OImp(_db);
-            CommonHelper.ProcessText(_textProcessImp.DataPath, _textProcessImp);
+            //if(_db==null)
+            //    _db = DBHelper.InitDB4O("Cai.yap", typeof(DoubleBoll));
+            //TextProcessToDB4OImp _textProcessImp = new TextProcessToDB4OImp(_db);
+            //DBHelper.ProcessText(_textProcessImp.DataPath, _textProcessImp);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             if(_db.Close())
-                CommonHelper.DeleteDBFile("Cai.yap");
+                DBHelper.DeleteDBFile("Cai.yap");
         }
 
         DoubleBoll[] LoadAll()
         {
-            return CommonHelper.Find<DoubleBoll>(_db,"_date");
-
+            return DBHelper.GetALL<DoubleBoll>(_db, "_date");
         }
 
         private void Add_Click(object sender, EventArgs e)
@@ -58,7 +65,7 @@ namespace cai
                 int rowIndex = e.RowIndex;
                 DoubleBoll data = new DoubleBoll();
                 data.QiShu = dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
-                data.KaiJiangRiQi = DateTime.Parse(dataGridView1.Rows[rowIndex].Cells[1].Value.ToString());
+                data.OpenDate = DateTime.Parse(dataGridView1.Rows[rowIndex].Cells[1].Value.ToString());
                 data.SaleTotal = int.Parse(dataGridView1.Rows[rowIndex].Cells[2].Value.ToString());
                 data.Red1 = int.Parse(dataGridView1.Rows[rowIndex].Cells[3].Value.ToString());
                 data.Red2 = int.Parse(dataGridView1.Rows[rowIndex].Cells[4].Value.ToString());
@@ -116,7 +123,7 @@ namespace cai
         private void Bt_duplicate_Click(object sender, EventArgs e)
         {
             ICaiCompare compare = new DoubleColorCompareImp();
-            Dictionary<int, List<IDataType>> recode = CommonHelper.GetSameRecord(all,compare);
+            Dictionary<int, List<IDataType>> recode = CommonHelper.GetSameRecord(all, compare);
             List<IDataType> data = new List<IDataType>();
             if (recode.Count > 0)
             {
@@ -154,7 +161,7 @@ namespace cai
                         dic.Add("_No", searchStr);
                         para.Add(dic);
 
-                        retAray = CommonHelper.Find<DoubleBoll>(_db,JoinType.And,ContainType.StartsWith,para.ToArray());
+                        retAray = DBHelper.Find<DoubleBoll>(_db, JoinType.And, ContainType.StartsWith, para.ToArray());
                         RefreshDataView(retAray);
                     }
                     else
@@ -170,7 +177,7 @@ namespace cai
                                 dic.Add("_allballs", bal);
                                 para.Add(dic);
                             }
-                            retAray = CommonHelper.Find<DoubleBoll>(_db, JoinType.And, ContainType.Like, para.ToArray());
+                            retAray = DBHelper.Find<DoubleBoll>(_db, JoinType.And, ContainType.Like, para.ToArray());
                             RefreshDataView(retAray);
                         }
                         else
@@ -190,23 +197,97 @@ namespace cai
 
         private void button3_Click(object sender, EventArgs e)
         {
-            HtmlHelper.HtmlFromWebReq req = new HtmlHelper.HtmlFromWebReq(
-                @"http://kaijiang.zhcw.com/zhcw/html/ssq/list_10.html", delegate(byte[] data)
+            if (CommonHelper.IsInterNetConnected())
+            {
+                try
                 {
-                    string constructedString = System.Text.Encoding.UTF8.GetString(data);
-                    HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
-                    doc.LoadHtml(constructedString);
-                    HtmlAgilityPack.HtmlNode node = doc.DocumentNode.SelectSingleNode("/html[1]/body[1]/table[1]/tr[3]/td[3]");
-                    HtmlAgilityPack.HtmlNodeCollection _nodes = doc.DocumentNode.SelectNodes("/html[1]/body[1]/table[1]/tr");
-                    foreach (HtmlAgilityPack.HtmlNode no in _nodes)
+                    string ulrPrefix = @"http://kaijiang.zhcw.com/zhcw/html/ssq/list_";
+                    string ulrSufix = @".html";
+                    int total = 77;
+                    int done = 0;
+                    for (int i = 1; i <= total; i++)
                     {
-                        string s = no.InnerText;
-                    }
-                    string temp = node.InnerText;
-                    MessageBox.Show(temp);
-                });
+                        string realUlr = ulrPrefix + i.ToString() + ulrSufix;
+                        HtmlHelper.HtmlFromWebReq req = new HtmlHelper.HtmlFromWebReq(
+                            realUlr, delegate(byte[] data)
+                            {
+                                string constructedString = System.Text.Encoding.UTF8.GetString(data);
+                                HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+                                doc.LoadHtml(constructedString);
+                                //HtmlAgilityPack.HtmlNode node = doc.DocumentNode.SelectSingleNode("/html[1]/body[1]/table[1]/tr[3]/td[3]");
+                                HtmlAgilityPack.HtmlNodeCollection _nodes = doc.DocumentNode.SelectNodes("/html[1]/body[1]/table[1]/tr[position()>2]");
+                                foreach (HtmlAgilityPack.HtmlNode no in _nodes)
+                                {
+                                    string s = no.InnerText;
+                                    s = s.Trim().Replace(" ", "");//.Replace('\n',' ').Replace('\r',' ');//Replace(" ","|");
+                                    string[] lines = s.Split(new char[] { '\r', '\n' });
+                                    List<string> _infos = new List<string>();
+                                    foreach (string ss in lines)
+                                    {
+                                        if (string.IsNullOrEmpty(ss))
+                                            continue;
+                                        _infos.Add(ss);
+                                    }
+                                    if (!(_infos.Count == 12 || _infos.Count == 13))
+                                        continue;
+                                    DoubleBoll temp = new DoubleBoll();
+                                    string riqi = _infos[0];
+                                    string qishu = _infos[1];
+                                    string r1 = _infos[2];
+                                    string r2 = _infos[3];
+                                    string r3 = _infos[4];
+                                    string r4 = _infos[5];
+                                    string r5 = _infos[6];
+                                    string r6 = _infos[7];
+                                    string b1 = _infos[8];
+                                    string allmoney = _infos[9];
+                                    string fno="", fpro="", sno="";
+                                    if (_infos.Count == 13)
+                                    {
+                                        fno = _infos[10];
+                                        fpro = _infos[11];
+                                        sno = _infos[12];
+                                    }
+                                    else if (_infos.Count == 12)
+                                    {
+                                        fno = _infos[10];
+                                        sno = _infos[11];
+                                    }
 
-            req.BeginCreateHtml();
+                                    string[] ymd = riqi.Split(new char[] { '-' });
+                                    DateTime opendate = new DateTime(Convert.ToInt32(ymd[0]), Convert.ToInt32(ymd[1]), Convert.ToInt32(ymd[2]));
+                                    temp.OpenDate = opendate;
+                                    temp.Red1 = Convert.ToInt32(r1);
+                                    temp.Red2 = Convert.ToInt32(r2);
+                                    temp.Red3 = Convert.ToInt32(r3);
+                                    temp.Red4 = Convert.ToInt32(r4);
+                                    temp.Red5 = Convert.ToInt32(r5);
+                                    temp.Red6 = Convert.ToInt32(r6);
+                                    temp.Blue = Convert.ToInt32(b1);
+                                    temp.SaleTotal = Convert.ToInt32(allmoney.Replace(",", ""));
+                                    temp.TouJiangZhuShu = Convert.ToInt32(fno);
+                                    temp.ErJiangZhuShu = Convert.ToInt32(sno);
+                                    temp.FirstProvince = fpro;
+                                    temp.QiShu = qishu;
+                                    if (!DBHelper.SaveToDB(_db, temp, true))
+                                        DBHelper.UpdateFromDB(_db, temp);
+                                }
+                                //string temp = node.InnerText;
+                                done++;
+                                if (done == 77)
+                                    MessageBox.Show("完成");
+                            });
+
+                        req.BeginCreateHtml();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    LOGGER.Error("**************导入数据错误***********", ex);
+                }
+            }
+            else
+                MessageBox.Show("没有互联网！");
         }
     }
 }
