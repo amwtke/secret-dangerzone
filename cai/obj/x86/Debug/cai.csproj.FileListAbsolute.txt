@@ -1,0 +1,85 @@
+c:\users\administrator\documents\visual studio 2010\Projects\cai\cai\bin\Debug\cai.exe
+c:\users\administrator\documents\visual studio 2010\Projects\cai\cai\bin\Debug\cai.pdb
+c:\users\administrator\documents\visual studio 2010\Projects\cai\cai\bin\Debug\Db4objects.Db4o.dll
+c:\users\administrator\documents\visual studio 2010\Projects\cai\cai\bin\Debug\Db4objects.Db4o.xml
+c:\users\administrator\documents\visual studio 2010\Projects\cai\cai\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2010\Projects\cai\cai\obj\x86\Debug\cai.Properties.Resources.resources
+c:\users\administrator\documents\visual studio 2010\Projects\cai\cai\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\administrator\documents\visual studio 2010\Projects\cai\cai\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\administrator\documents\visual studio 2010\Projects\cai\cai\obj\x86\Debug\cai.exe
+c:\users\administrator\documents\visual studio 2010\Projects\cai\cai\obj\x86\Debug\cai.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\cai\cai\obj\x86\Debug\cai.MainWindow.resources
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\cai\cai\obj\x86\Debug\cai.Detail.resources
+E:\xj\src\cai_23364\cai\cai\obj\x86\Debug\cai.exe
+E:\xj\src\cai_23364\cai\cai\obj\x86\Debug\cai.pdb
+E:\xj\src\cai_23364\cai\cai\bin\Debug\cai.exe
+E:\xj\src\cai_23364\cai\cai\bin\Debug\cai.pdb
+E:\xj\src\cai_23364\cai\cai\bin\Debug\Db4objects.Db4o.xml
+E:\xj\src\cai_23364\cai\cai\obj\x86\Debug\cai.csprojResolveAssemblyReference.cache
+E:\xj\src\cai_23364\cai\cai\obj\x86\Debug\cai.Detail.resources
+E:\xj\src\cai_23364\cai\cai\obj\x86\Debug\cai.MainWindow.resources
+E:\xj\src\cai_23364\cai\cai\obj\x86\Debug\cai.Properties.Resources.resources
+E:\xj\src\cai_23364\cai\cai\obj\x86\Debug\cai.csproj.GenerateResource.Cache
+E:\我的\Src\cai\cai_40840\cai\cai\obj\x86\Debug\cai.exe
+E:\我的\Src\cai\cai_40840\cai\cai\obj\x86\Debug\cai.pdb
+E:\我的\Src\cai\cai_40840\cai\cai\bin\Debug\cai.exe
+E:\我的\Src\cai\cai_40840\cai\cai\bin\Debug\cai.pdb
+E:\我的\Src\cai\cai_40840\cai\cai\bin\Debug\Db4objects.Db4o.dll
+E:\我的\Src\cai\cai_40840\cai\cai\bin\Debug\Db4objects.Db4o.xml
+E:\我的\Src\cai\cai_40840\cai\cai\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\我的\Src\cai\cai_40840\cai\cai\obj\x86\Debug\cai.Detail.resources
+E:\我的\Src\cai\cai_40840\cai\cai\obj\x86\Debug\cai.MainWindow.resources
+E:\我的\Src\cai\cai_40840\cai\cai\obj\x86\Debug\cai.Properties.Resources.resources
+E:\我的\Src\cai\cai_40840\cai\cai\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\我的\Src\cai\cai_40840\cai\cai\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\xj\src\cai\cai_40840\cai\cai\obj\x86\Debug\cai.exe
+E:\xj\src\cai\cai_40840\cai\cai\obj\x86\Debug\cai.pdb
+E:\xj\src\cai\cai_40840\cai\cai\bin\Debug\cai.exe
+E:\xj\src\cai\cai_40840\cai\cai\bin\Debug\cai.pdb
+E:\xj\src\cai\cai_40840\cai\cai\bin\Debug\Db4objects.Db4o.xml
+E:\xj\src\cai\cai_40840\cai\cai\obj\x86\Debug\cai.csprojResolveAssemblyReference.cache
+E:\xj\src\cai\cai_40840\cai\cai\obj\x86\Debug\cai.Detail.resources
+E:\xj\src\cai\cai_40840\cai\cai\obj\x86\Debug\cai.MainWindow.resources
+E:\xj\src\cai\cai_40840\cai\cai\obj\x86\Debug\cai.Properties.Resources.resources
+E:\xj\src\cai\cai_40840\cai\cai\obj\x86\Debug\cai.csproj.GenerateResource.Cache
+E:\xj\src\cai\cai\cai\obj\x86\Debug\cai.exe
+E:\xj\src\cai\cai\cai\obj\x86\Debug\cai.pdb
+E:\xj\src\cai\cai\cai\bin\Debug\cai.exe
+E:\xj\src\cai\cai\cai\bin\Debug\cai.pdb
+E:\xj\src\cai\cai\cai\bin\Debug\Db4objects.Db4o.xml
+E:\xj\src\cai\cai\cai\obj\x86\Debug\cai.csprojResolveAssemblyReference.cache
+E:\xj\src\cai\cai\cai\obj\x86\Debug\cai.Detail.resources
+E:\xj\src\cai\cai\cai\obj\x86\Debug\cai.MainWindow.resources
+E:\xj\src\cai\cai\cai\obj\x86\Debug\cai.Properties.Resources.resources
+E:\xj\src\cai\cai\cai\obj\x86\Debug\cai.csproj.GenerateResource.Cache
+E:\xj\src\cai\cai\cai\bin\Debug\cai.exe.config
+E:\xj\src\cai\cai\cai\obj\x86\Debug\CSharpChartExplorer.ChartExplorer.resources
+E:\xj\src\cai\cai\cai\bin\Debug\Db4objects.Db4o.dll
+E:\xj\src\cai\cai\cai\bin\Debug\netchartdir.dll
+E:\xj\src\cai\cai\cai\bin\Debug\netchartdir.xml
+E:\xj\src\cai\cai\cai\obj\x86\Debug\CSharpChartExplorer.FrmRealTimeDemo.resources
+E:\xj\src\cai\cai\cai\obj\x86\Debug\CSharpChartExplorer.FrmFinanceDemo.resources
+E:\xj\src\cai\cai\cai\obj\x86\Debug\CSharpChartExplorer.FrmZoomScrollDemo.resources
+E:\xj\src\cai\cai\cai\obj\x86\Debug\CSharpChartExplorer.FrmZoomScrollDemo2.resources
+E:\xj\src\cai\cai\cai\obj\x86\Debug\CSharpChartExplorer.ParamViewer.resources
+E:\old\xj\src\cai\cai\cai\bin\Debug\cai.exe.config
+E:\old\xj\src\cai\cai\cai\obj\x86\Debug\cai.exe
+E:\old\xj\src\cai\cai\cai\obj\x86\Debug\cai.pdb
+E:\old\xj\src\cai\cai\cai\bin\Debug\cai.exe
+E:\old\xj\src\cai\cai\cai\bin\Debug\cai.pdb
+E:\old\xj\src\cai\cai\cai\bin\Debug\Db4objects.Db4o.dll
+E:\old\xj\src\cai\cai\cai\bin\Debug\Db4objects.Db4o.xml
+E:\old\xj\src\cai\cai\cai\bin\Debug\netchartdir.xml
+E:\old\xj\src\cai\cai\cai\obj\x86\Debug\cai.csprojResolveAssemblyReference.cache
+E:\old\xj\src\cai\cai\cai\obj\x86\Debug\cai.Detail.resources
+E:\old\xj\src\cai\cai\cai\obj\x86\Debug\CSharpChartExplorer.ParamViewer.resources
+E:\old\xj\src\cai\cai\cai\obj\x86\Debug\CSharpChartExplorer.FrmZoomScrollDemo2.resources
+E:\old\xj\src\cai\cai\cai\obj\x86\Debug\CSharpChartExplorer.FrmZoomScrollDemo.resources
+E:\old\xj\src\cai\cai\cai\obj\x86\Debug\CSharpChartExplorer.FrmFinanceDemo.resources
+E:\old\xj\src\cai\cai\cai\obj\x86\Debug\CSharpChartExplorer.FrmRealTimeDemo.resources
+E:\old\xj\src\cai\cai\cai\obj\x86\Debug\cai.MainWindow.resources
+E:\old\xj\src\cai\cai\cai\obj\x86\Debug\cai.Properties.Resources.resources
+E:\old\xj\src\cai\cai\cai\obj\x86\Debug\CSharpChartExplorer.ChartExplorer.resources
+E:\old\xj\src\cai\cai\cai\obj\x86\Debug\cai.csproj.GenerateResource.Cache
+E:\old\xj\src\cai\cai\cai\bin\Debug\HtmlAgilityPack.dll
+E:\old\xj\src\cai\cai\cai\bin\Debug\HtmlAgilityPack.xml
