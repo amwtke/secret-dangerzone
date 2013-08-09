@@ -197,6 +197,11 @@ namespace cai
                     HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
                     doc.LoadHtml(constructedString);
                     HtmlAgilityPack.HtmlNode node = doc.DocumentNode.SelectSingleNode("/html[1]/body[1]/table[1]/tr[3]/td[3]");
+                    HtmlAgilityPack.HtmlNodeCollection _nodes = doc.DocumentNode.SelectNodes("/html[1]/body[1]/table[1]/tr");
+                    foreach (HtmlAgilityPack.HtmlNode no in _nodes)
+                    {
+                        string s = no.InnerText;
+                    }
                     string temp = node.InnerText;
                     MessageBox.Show(temp);
                 });
