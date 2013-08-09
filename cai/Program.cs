@@ -7,6 +7,11 @@ namespace cai
 {
     static class Program
     {
+        static Program()
+        {
+            log4net.Config.XmlConfigurator.Configure(new System.IO.FileInfo(@"config/Log4net.xml"));
+            log4net.Config.XmlConfigurator.ConfigureAndWatch(new System.IO.FileInfo(@"config/Log4net.xml"));
+        }
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>

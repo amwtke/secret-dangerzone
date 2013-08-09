@@ -5,7 +5,7 @@ using System.Text;
 
 namespace cai
 {
-    interface IDataType
+    public interface IDataType
     {
         int GetGetSumNo();
         string key

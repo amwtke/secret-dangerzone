@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<log4net>
+  <root>
+    <level value="INFO" />
+    <appender-ref ref="rollingFile" />
+  </root>
+
+  <appender  name="rollingFile" type="log4net.Appender.RollingFileAppender,log4net" >
+    <param name="File" value="logs\\log.txt" />
+    <param name="AppendToFile" value="true" />
+    <param name="RollingStyle" value="Date" />
+    <param name="DatePattern" value="yyyy.MM.dd" />
+    <param name="StaticLogFileName" value="true" />
+    <layout type="log4net.Layout.PatternLayout,log4net">
+      <param name="ConversionPattern" value="%d [%t] %-5p %c - %m%n" />
+      <param name="Header" value="&#13;&#10;----------------------header--------------------------&#13;&#10;" />
+      <param name="Footer" value="&#13;&#10;----------------------footer--------------------------&#13;&#10;" />
+    </layout>
+  </appender>
+  <appender name="consoleApp" type="log4net.Appender.ConsoleAppender,log4net">
+    <layout type="log4net.Layout.PatternLayout,log4net">
+      <param name="ConversionPattern" value="%d [%t] %-5p %c - %m%n" />
+    </layout>
+  </appender>
+  <logger name="Log4NetTest.LogTest">
+    <level value="DEBUG" />
+    <appender-ref  ref="rollingFile" />
+    <appender-ref ref="coloredConsoleApp" />
+    <appender-ref ref="SystemEvent" />
+  </logger>
+</log4net>

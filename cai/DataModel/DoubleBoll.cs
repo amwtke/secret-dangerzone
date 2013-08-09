@@ -7,8 +7,8 @@ namespace cai
 {
     public class DoubleBoll : IDataType
     {
+        [Key("_No")]
         private string _No;
-        private DateTime _date;
         private int _totalsale;
         private int _redOne;
         private int _redTwo;
@@ -24,7 +24,8 @@ namespace cai
         private int _thirdPireceNo;
         private int _thirdPirce;
         private string _allballs;
-
+        private string _firstProvince;
+        private DateTime _opendate;
         //public DoubleBoll(string qi, DateTime kaijiangriqi, int totalsale,
         //    int red1, int red2, int red3, int red4, int red5, int red6, int blue
         //    , int firstPriceNo, int firstPrice, int secondPriceNo, int secondPrice, int thridPriceNo, int thridPrice)
@@ -47,6 +48,16 @@ namespace cai
         //    _thirdPireceNo = thridPriceNo;
         //}
         public DoubleBoll() { }
+        public DateTime OpenDate
+        {
+            get { return _opendate; }
+            set { _opendate = value; }
+        }
+        public string FirstProvince
+        {
+            get { return _firstProvince; }
+            set { _firstProvince = value; }
+        }
         public string QiShu
         {
             get
@@ -56,17 +67,6 @@ namespace cai
             set
             {
                 _No = value;
-            }
-        }
-        public DateTime KaiJiangRiQi
-        {
-            get
-            {
-                return _date;
-            }
-            set
-            {
-                _date = value;
             }
         }
         public int SaleTotal
