@@ -9,6 +9,7 @@ using Db4objects.Db4o;
 using Db4objects.Db4o.Config;
 using Db4objects.Db4o.Query;
 using CSharpChartExplorer;
+using HtmlAgilityPack;
 namespace cai
 {
     public partial class MainWindow : Form
@@ -193,8 +194,13 @@ namespace cai
                 @"http://kaijiang.zhcw.com/zhcw/html/ssq/list_10.html", delegate(byte[] data)
                 {
                     string constructedString = System.Text.Encoding.UTF8.GetString(data);
-                    MessageBox.Show(constructedString); 
+                    HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+                    doc.LoadHtml(constructedString);
+                    HtmlAgilityPack.HtmlNode node = doc.DocumentNode.SelectSingleNode("/html[1]/body[1]/table[1]/tr[3]/td[3]");
+                    string temp = node.InnerText;
+                    MessageBox.Show(temp);
                 });
+
             req.BeginCreateHtml();
         }
     }
