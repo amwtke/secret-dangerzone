@@ -83,3 +83,6 @@ E:\old\xj\src\cai\cai\cai\obj\x86\Debug\CSharpChartExplorer.ChartExplorer.resour
 E:\old\xj\src\cai\cai\cai\obj\x86\Debug\cai.csproj.GenerateResource.Cache
 E:\old\xj\src\cai\cai\cai\bin\Debug\HtmlAgilityPack.dll
 E:\old\xj\src\cai\cai\cai\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Administrator\Documents\Visual Studio 11\Projects\cai(1)\cai\bin\Debug\cai.exe.config
+C:\Users\Administrator\Documents\Visual Studio 11\Projects\cai(1)\cai\obj\x86\Debug\cai.exe
+C:\Users\Administrator\Documents\Visual Studio 11\Projects\cai(1)\cai\obj\x86\Debug\cai.pdb
