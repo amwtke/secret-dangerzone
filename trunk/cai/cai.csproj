@@ -76,6 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithm\Sort.cs" />
     <Compile Include="Compare\DoubleColorCompare.cs" />
     <Compile Include="Compare\ICaiCompare.cs" />
     <Compile Include="DataModel\IDataType.cs" />
@@ -317,6 +318,8 @@
     <Compile Include="reports\yzonecolor.cs" />
     <Compile Include="reports\zoomscrolldemo.cs" />
     <Compile Include="reports\zoomscrolldemo2.cs" />
+    <Compile Include="Report\BasicReport.cs" />
+    <Compile Include="Report\IReport.cs" />
     <EmbeddedResource Include="Detail.resx">
       <DependentUpon>Detail.cs</DependentUpon>
     </EmbeddedResource>
@@ -377,9 +380,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Algorithm\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
       <Visible>False</Visible>
@@ -398,7 +399,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="config\Log4net.xml" />
+    <Content Include="config\Log4net.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="libs\ComputeCommon.dll" />
     <Content Include="libs\Db4objects.Db4o.dll" />
     <Content Include="libs\Db4objects.Db4o.xml" />
     <Content Include="libs\HtmlAgilityPack.dll" />

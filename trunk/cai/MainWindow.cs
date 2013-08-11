@@ -289,5 +289,11 @@ namespace cai
             else
                 MessageBox.Show("没有互联网！");
         }
+
+        private void bt_myreport_Click(object sender, EventArgs e)
+        {
+            cai.Report.IReport b = new Report.BasicReport();
+            b.Compute();
+        }
     }
 }

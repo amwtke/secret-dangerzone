@@ -33,13 +33,6 @@
             this.components = new System.ComponentModel.Container();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Add = new System.Windows.Forms.Button();
-            this.Bt_duplicate = new System.Windows.Forms.Button();
-            this.tb_search = new System.Windows.Forms.TextBox();
-            this.Bt_report = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.doubleBollBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.openDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstProvinceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qiShuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +51,14 @@
             this.sanJiangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sanJiangZhuShuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.allBollsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doubleBollBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.Add = new System.Windows.Forms.Button();
+            this.Bt_duplicate = new System.Windows.Forms.Button();
+            this.tb_search = new System.Windows.Forms.TextBox();
+            this.Bt_report = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.bt_myreport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doubleBollBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -108,67 +109,6 @@
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             this.dataGridView1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyUp);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(176, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(11, 12);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "0";
-            // 
-            // Add
-            // 
-            this.Add.Location = new System.Drawing.Point(12, 9);
-            this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(75, 23);
-            this.Add.TabIndex = 4;
-            this.Add.Text = "加入";
-            this.Add.UseVisualStyleBackColor = true;
-            this.Add.Click += new System.EventHandler(this.Add_Click);
-            // 
-            // Bt_duplicate
-            // 
-            this.Bt_duplicate.Location = new System.Drawing.Point(961, 10);
-            this.Bt_duplicate.Name = "Bt_duplicate";
-            this.Bt_duplicate.Size = new System.Drawing.Size(75, 23);
-            this.Bt_duplicate.TabIndex = 5;
-            this.Bt_duplicate.Text = "重复";
-            this.Bt_duplicate.UseVisualStyleBackColor = true;
-            this.Bt_duplicate.Click += new System.EventHandler(this.Bt_duplicate_Click);
-            // 
-            // tb_search
-            // 
-            this.tb_search.Location = new System.Drawing.Point(288, 9);
-            this.tb_search.Name = "tb_search";
-            this.tb_search.Size = new System.Drawing.Size(219, 21);
-            this.tb_search.TabIndex = 6;
-            this.tb_search.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tb_search_KeyUp);
-            // 
-            // Bt_report
-            // 
-            this.Bt_report.Location = new System.Drawing.Point(880, 10);
-            this.Bt_report.Name = "Bt_report";
-            this.Bt_report.Size = new System.Drawing.Size(75, 23);
-            this.Bt_report.TabIndex = 7;
-            this.Bt_report.Text = "Report";
-            this.Bt_report.UseVisualStyleBackColor = true;
-            this.Bt_report.Click += new System.EventHandler(this.Bt_report_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(1064, 10);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(110, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "从网络同步数据";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // doubleBollBindingSource
-            // 
-            this.doubleBollBindingSource.DataSource = typeof(cai.DoubleBoll);
             // 
             // openDateDataGridViewTextBoxColumn
             // 
@@ -296,11 +236,83 @@
             this.allBollsDataGridViewTextBoxColumn.Name = "allBollsDataGridViewTextBoxColumn";
             this.allBollsDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // doubleBollBindingSource
+            // 
+            this.doubleBollBindingSource.DataSource = typeof(cai.DoubleBoll);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(176, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(11, 12);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "0";
+            // 
+            // Add
+            // 
+            this.Add.Location = new System.Drawing.Point(12, 9);
+            this.Add.Name = "Add";
+            this.Add.Size = new System.Drawing.Size(75, 23);
+            this.Add.TabIndex = 4;
+            this.Add.Text = "加入";
+            this.Add.UseVisualStyleBackColor = true;
+            this.Add.Click += new System.EventHandler(this.Add_Click);
+            // 
+            // Bt_duplicate
+            // 
+            this.Bt_duplicate.Location = new System.Drawing.Point(972, 10);
+            this.Bt_duplicate.Name = "Bt_duplicate";
+            this.Bt_duplicate.Size = new System.Drawing.Size(75, 23);
+            this.Bt_duplicate.TabIndex = 5;
+            this.Bt_duplicate.Text = "重复";
+            this.Bt_duplicate.UseVisualStyleBackColor = true;
+            this.Bt_duplicate.Click += new System.EventHandler(this.Bt_duplicate_Click);
+            // 
+            // tb_search
+            // 
+            this.tb_search.Location = new System.Drawing.Point(288, 9);
+            this.tb_search.Name = "tb_search";
+            this.tb_search.Size = new System.Drawing.Size(219, 21);
+            this.tb_search.TabIndex = 6;
+            this.tb_search.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tb_search_KeyUp);
+            // 
+            // Bt_report
+            // 
+            this.Bt_report.Location = new System.Drawing.Point(880, 10);
+            this.Bt_report.Name = "Bt_report";
+            this.Bt_report.Size = new System.Drawing.Size(75, 23);
+            this.Bt_report.TabIndex = 7;
+            this.Bt_report.Text = "Report";
+            this.Bt_report.UseVisualStyleBackColor = true;
+            this.Bt_report.Click += new System.EventHandler(this.Bt_report_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(1064, 10);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(110, 23);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "从网络同步数据";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // bt_myreport
+            // 
+            this.bt_myreport.Location = new System.Drawing.Point(787, 9);
+            this.bt_myreport.Name = "bt_myreport";
+            this.bt_myreport.Size = new System.Drawing.Size(75, 23);
+            this.bt_myreport.TabIndex = 9;
+            this.bt_myreport.Text = "Log Report";
+            this.bt_myreport.UseVisualStyleBackColor = true;
+            this.bt_myreport.Click += new System.EventHandler(this.bt_myreport_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1282, 604);
+            this.Controls.Add(this.bt_myreport);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.Bt_report);
             this.Controls.Add(this.tb_search);
@@ -349,6 +361,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sanJiangZhuShuDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn allBollsDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource doubleBollBindingSource;
+        private System.Windows.Forms.Button bt_myreport;
     }
 }
 
