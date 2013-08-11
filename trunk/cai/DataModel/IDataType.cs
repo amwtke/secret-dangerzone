@@ -11,6 +11,6 @@ namespace cai
         string key
         {
             get;
-        }
+        } 
     }
 }
