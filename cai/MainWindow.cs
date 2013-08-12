@@ -23,14 +23,11 @@ namespace cai
             }
         }
         public static IObjectContainer _db = DBHelper.InitDB4O("Cai.yap", typeof(DoubleBoll));
-        DoubleBoll[] all;
         public MainWindow()
         {
             InitializeComponent();
-            all = LoadAll();
-            dataGridView1.DataSource = all;
-            dataGridView1.Refresh();
-            label1.Text = all.Length.ToString();
+            
+            BindData();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -52,12 +49,76 @@ namespace cai
             return DBHelper.GetALL<DoubleBoll>(_db, "_No");
         }
 
+        DoubleBoll[] _allballs = null;
+        void BindData()
+        {
+            _allballs = LoadAll();
+            label1.Text = _allballs.Length.ToString();
+            DataView v = FillDataView(_allballs);
+
+            dataGridView1.DataSource = v;
+            dataGridView1.Refresh();
+        }
+        void BindData(DoubleBoll[] balls)
+        {
+            //_allballs = LoadAll();
+            label1.Text = balls.Length.ToString();
+            DataView v = FillDataView(balls);
+
+            dataGridView1.DataSource = v;
+            dataGridView1.Refresh();
+        }
+
         private void Add_Click(object sender, EventArgs e)
         {
             Detail d = new Detail();
             d.Show();
         }
+        private DataView FillDataView(DoubleBoll[] balls)
+        {
+            if (balls != null && balls.Length > 0)
+            {
+                DataTable _table = new DataTable();
+                _table.Columns.Add("Qishu");
+                _table.Columns.Add("Opendate");
+                _table.Columns.Add("Red1");
+                _table.Columns.Add("Red2");
+                _table.Columns.Add("Red3");
+                _table.Columns.Add("Red4");
+                _table.Columns.Add("Red5");
+                _table.Columns.Add("Red6");
+                _table.Columns.Add("Bule1");
+                _table.Columns.Add("FirstProvince");
+                _table.Columns.Add("TotalSale");
+                _table.Columns.Add("FirstPriceNo");
+                _table.Columns.Add("SecondPriceNo");
+                _table.Rows.Clear();
+                foreach (DoubleBoll ball in balls)
+                {
+                    DataRow r = _table.NewRow();
+                    r["Qishu"] = ball.QiShu;
+                    r["Opendate"] = ball.OpenDate.ToShortDateString();
+                    r["Red1"] = ball.Red1;
+                    r["Red2"] = ball.Red2;
+                    r["Red3"] = ball.Red3;
+                    r["Red4"] = ball.Red4;
+                    r["Red5"] = ball.Red5;
+                    r["Red6"] = ball.Red6;
+                    r["Bule1"] = ball.Blue;
+                    r["FirstProvince"] = ball.FirstProvince;
+                    r["TotalSale"] = ball.SaleTotal;
+                    r["FirstPriceNo"] = ball.TouJiangZhuShu;
+                    r["SecondPriceNo"] = ball.ErJiangZhuShu;
+                    
+                    _table.Rows.Add(r);
+                }
 
+                DataView v = new DataView(_table);
+                v.Sort = "Qishu desc";
+                return v;
+            }
+            return null;
+        }
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > -1)
@@ -66,20 +127,20 @@ namespace cai
                 DoubleBoll data = new DoubleBoll();
                 data.QiShu = dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
                 data.OpenDate = DateTime.Parse(dataGridView1.Rows[rowIndex].Cells[1].Value.ToString());
-                data.SaleTotal = int.Parse(dataGridView1.Rows[rowIndex].Cells[2].Value.ToString());
-                data.Red1 = int.Parse(dataGridView1.Rows[rowIndex].Cells[3].Value.ToString());
-                data.Red2 = int.Parse(dataGridView1.Rows[rowIndex].Cells[4].Value.ToString());
-                data.Red3 = int.Parse(dataGridView1.Rows[rowIndex].Cells[5].Value.ToString());
-                data.Red4 = int.Parse(dataGridView1.Rows[rowIndex].Cells[6].Value.ToString());
-                data.Red5 = int.Parse(dataGridView1.Rows[rowIndex].Cells[7].Value.ToString());
-                data.Red6 = int.Parse(dataGridView1.Rows[rowIndex].Cells[8].Value.ToString());
-                data.Blue = int.Parse(dataGridView1.Rows[rowIndex].Cells[9].Value.ToString());
-                data.TouJiangZhuShu = int.Parse(dataGridView1.Rows[rowIndex].Cells[10].Value.ToString());
-                data.TouJiang = int.Parse(dataGridView1.Rows[rowIndex].Cells[11].Value.ToString());
+                data.SaleTotal = int.Parse(dataGridView1.Rows[rowIndex].Cells[10].Value.ToString());
+                data.Red1 = int.Parse(dataGridView1.Rows[rowIndex].Cells[2].Value.ToString());
+                data.Red2 = int.Parse(dataGridView1.Rows[rowIndex].Cells[3].Value.ToString());
+                data.Red3 = int.Parse(dataGridView1.Rows[rowIndex].Cells[4].Value.ToString());
+                data.Red4 = int.Parse(dataGridView1.Rows[rowIndex].Cells[5].Value.ToString());
+                data.Red5 = int.Parse(dataGridView1.Rows[rowIndex].Cells[6].Value.ToString());
+                data.Red6 = int.Parse(dataGridView1.Rows[rowIndex].Cells[7].Value.ToString());
+                data.Blue = int.Parse(dataGridView1.Rows[rowIndex].Cells[8].Value.ToString());
+                data.TouJiangZhuShu = int.Parse(dataGridView1.Rows[rowIndex].Cells[11].Value.ToString());
+                //data.TouJiang = int.Parse(dataGridView1.Rows[rowIndex].Cells[11].Value.ToString());
                 data.ErJiangZhuShu = int.Parse(dataGridView1.Rows[rowIndex].Cells[12].Value.ToString());
-                data.ErJiang = int.Parse(dataGridView1.Rows[rowIndex].Cells[13].Value.ToString());
-                data.SanJiangZhuShu = int.Parse(dataGridView1.Rows[rowIndex].Cells[14].Value.ToString());
-                data.SanJiang = int.Parse(dataGridView1.Rows[rowIndex].Cells[15].Value.ToString());
+                //data.ErJiang = int.Parse(dataGridView1.Rows[rowIndex].Cells[13].Value.ToString());
+               // data.SanJiangZhuShu = int.Parse(dataGridView1.Rows[rowIndex].Cells[14].Value.ToString());
+                //data.SanJiang = int.Parse(dataGridView1.Rows[rowIndex].Cells[15].Value.ToString());
 
                 Detail d = new Detail(data);
                 d.Show();
@@ -90,27 +151,21 @@ namespace cai
         {
             if (e.KeyCode == Keys.F1)
             {
-                all = LoadAll();
-                dataGridView1.DataSource = all;
-                dataGridView1.Refresh();
-                label1.Text = all.Length.ToString();
+                BindData();
             }
         }
 
         void RefreshDataView()
         {
-            all = LoadAll();
-            dataGridView1.DataSource = all;
-            dataGridView1.Refresh();
-            label1.Text = all.Length.ToString();
+            BindData();
         }
 
-        void RefreshDataView(DoubleBoll[] array)
-        {
-            dataGridView1.DataSource = array;
-            dataGridView1.Refresh();
-            label1.Text = array.Length.ToString();
-        }
+        //void RefreshDataView(DoubleBoll[] array)
+        //{
+        //    dataGridView1.DataSource = array;
+        //    dataGridView1.Refresh();
+        //    label1.Text = array.Length.ToString();
+        //}
 
         private void dataGridView1_KeyUp(object sender, KeyEventArgs e)
         {
@@ -123,7 +178,7 @@ namespace cai
         private void Bt_duplicate_Click(object sender, EventArgs e)
         {
             ICaiCompare compare = new DoubleColorCompareImp();
-            Dictionary<int, List<IDataType>> recode = CommonHelper.GetSameRecord(all, compare);
+            Dictionary<int, List<IDataType>> recode = CommonHelper.GetSameRecord(_allballs, compare);
             List<IDataType> data = new List<IDataType>();
             if (recode.Count > 0)
             {
@@ -162,7 +217,7 @@ namespace cai
                         para.Add(dic);
 
                         retAray = DBHelper.Find<DoubleBoll>(_db, JoinType.And, ContainType.StartsWith, para.ToArray());
-                        RefreshDataView(retAray);
+                        BindData(retAray);
                     }
                     else
                     {
@@ -178,7 +233,7 @@ namespace cai
                                 para.Add(dic);
                             }
                             retAray = DBHelper.Find<DoubleBoll>(_db, JoinType.And, ContainType.Like, para.ToArray());
-                            RefreshDataView(retAray);
+                            BindData(retAray);
                         }
                         else
                         {
@@ -275,7 +330,9 @@ namespace cai
                                 //string temp = node.InnerText;
                                 done++;
                                 if (done == 77)
+                                {
                                     MessageBox.Show("完成");
+                                }
                             });
 
                         req.BeginCreateHtml();

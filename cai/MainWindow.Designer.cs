@@ -33,6 +33,7 @@
             this.components = new System.ComponentModel.Container();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.doubleBollBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.Add = new System.Windows.Forms.Button();
             this.Bt_duplicate = new System.Windows.Forms.Button();
@@ -40,25 +41,6 @@
             this.Bt_report = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.bt_myreport = new System.Windows.Forms.Button();
-            this.openDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstProvinceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qiShuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.saleTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.red1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.red2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.red3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.red4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.red5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.red6DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.blueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.touJiangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.touJiangZhuShuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.erJiangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.erJiangZhuShuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sanJiangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sanJiangZhuShuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.allBollsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doubleBollBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bt_syncRecent = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doubleBollBindingSource)).BeginInit();
@@ -80,28 +62,7 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.openDateDataGridViewTextBoxColumn,
-            this.firstProvinceDataGridViewTextBoxColumn,
-            this.qiShuDataGridViewTextBoxColumn,
-            this.saleTotalDataGridViewTextBoxColumn,
-            this.red1DataGridViewTextBoxColumn,
-            this.red2DataGridViewTextBoxColumn,
-            this.red3DataGridViewTextBoxColumn,
-            this.red4DataGridViewTextBoxColumn,
-            this.red5DataGridViewTextBoxColumn,
-            this.red6DataGridViewTextBoxColumn,
-            this.blueDataGridViewTextBoxColumn,
-            this.touJiangDataGridViewTextBoxColumn,
-            this.touJiangZhuShuDataGridViewTextBoxColumn,
-            this.erJiangDataGridViewTextBoxColumn,
-            this.erJiangZhuShuDataGridViewTextBoxColumn,
-            this.sanJiangDataGridViewTextBoxColumn,
-            this.sanJiangZhuShuDataGridViewTextBoxColumn,
-            this.allBollsDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.doubleBollBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 39);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -110,6 +71,10 @@
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             this.dataGridView1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyUp);
+            // 
+            // doubleBollBindingSource
+            // 
+            this.doubleBollBindingSource.DataSource = typeof(cai.DoubleBoll);
             // 
             // label1
             // 
@@ -178,136 +143,6 @@
             this.bt_myreport.UseVisualStyleBackColor = true;
             this.bt_myreport.Click += new System.EventHandler(this.bt_myreport_Click);
             // 
-            // openDateDataGridViewTextBoxColumn
-            // 
-            this.openDateDataGridViewTextBoxColumn.DataPropertyName = "OpenDate";
-            this.openDateDataGridViewTextBoxColumn.HeaderText = "OpenDate";
-            this.openDateDataGridViewTextBoxColumn.Name = "openDateDataGridViewTextBoxColumn";
-            this.openDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // firstProvinceDataGridViewTextBoxColumn
-            // 
-            this.firstProvinceDataGridViewTextBoxColumn.DataPropertyName = "FirstProvince";
-            this.firstProvinceDataGridViewTextBoxColumn.HeaderText = "FirstProvince";
-            this.firstProvinceDataGridViewTextBoxColumn.Name = "firstProvinceDataGridViewTextBoxColumn";
-            this.firstProvinceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // qiShuDataGridViewTextBoxColumn
-            // 
-            this.qiShuDataGridViewTextBoxColumn.DataPropertyName = "QiShu";
-            this.qiShuDataGridViewTextBoxColumn.HeaderText = "QiShu";
-            this.qiShuDataGridViewTextBoxColumn.Name = "qiShuDataGridViewTextBoxColumn";
-            this.qiShuDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // saleTotalDataGridViewTextBoxColumn
-            // 
-            this.saleTotalDataGridViewTextBoxColumn.DataPropertyName = "SaleTotal";
-            this.saleTotalDataGridViewTextBoxColumn.HeaderText = "SaleTotal";
-            this.saleTotalDataGridViewTextBoxColumn.Name = "saleTotalDataGridViewTextBoxColumn";
-            this.saleTotalDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // red1DataGridViewTextBoxColumn
-            // 
-            this.red1DataGridViewTextBoxColumn.DataPropertyName = "Red1";
-            this.red1DataGridViewTextBoxColumn.HeaderText = "Red1";
-            this.red1DataGridViewTextBoxColumn.Name = "red1DataGridViewTextBoxColumn";
-            this.red1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // red2DataGridViewTextBoxColumn
-            // 
-            this.red2DataGridViewTextBoxColumn.DataPropertyName = "Red2";
-            this.red2DataGridViewTextBoxColumn.HeaderText = "Red2";
-            this.red2DataGridViewTextBoxColumn.Name = "red2DataGridViewTextBoxColumn";
-            this.red2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // red3DataGridViewTextBoxColumn
-            // 
-            this.red3DataGridViewTextBoxColumn.DataPropertyName = "Red3";
-            this.red3DataGridViewTextBoxColumn.HeaderText = "Red3";
-            this.red3DataGridViewTextBoxColumn.Name = "red3DataGridViewTextBoxColumn";
-            this.red3DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // red4DataGridViewTextBoxColumn
-            // 
-            this.red4DataGridViewTextBoxColumn.DataPropertyName = "Red4";
-            this.red4DataGridViewTextBoxColumn.HeaderText = "Red4";
-            this.red4DataGridViewTextBoxColumn.Name = "red4DataGridViewTextBoxColumn";
-            this.red4DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // red5DataGridViewTextBoxColumn
-            // 
-            this.red5DataGridViewTextBoxColumn.DataPropertyName = "Red5";
-            this.red5DataGridViewTextBoxColumn.HeaderText = "Red5";
-            this.red5DataGridViewTextBoxColumn.Name = "red5DataGridViewTextBoxColumn";
-            this.red5DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // red6DataGridViewTextBoxColumn
-            // 
-            this.red6DataGridViewTextBoxColumn.DataPropertyName = "Red6";
-            this.red6DataGridViewTextBoxColumn.HeaderText = "Red6";
-            this.red6DataGridViewTextBoxColumn.Name = "red6DataGridViewTextBoxColumn";
-            this.red6DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // blueDataGridViewTextBoxColumn
-            // 
-            this.blueDataGridViewTextBoxColumn.DataPropertyName = "Blue";
-            this.blueDataGridViewTextBoxColumn.HeaderText = "Blue";
-            this.blueDataGridViewTextBoxColumn.Name = "blueDataGridViewTextBoxColumn";
-            this.blueDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // touJiangDataGridViewTextBoxColumn
-            // 
-            this.touJiangDataGridViewTextBoxColumn.DataPropertyName = "TouJiang";
-            this.touJiangDataGridViewTextBoxColumn.HeaderText = "TouJiang";
-            this.touJiangDataGridViewTextBoxColumn.Name = "touJiangDataGridViewTextBoxColumn";
-            this.touJiangDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // touJiangZhuShuDataGridViewTextBoxColumn
-            // 
-            this.touJiangZhuShuDataGridViewTextBoxColumn.DataPropertyName = "TouJiangZhuShu";
-            this.touJiangZhuShuDataGridViewTextBoxColumn.HeaderText = "TouJiangZhuShu";
-            this.touJiangZhuShuDataGridViewTextBoxColumn.Name = "touJiangZhuShuDataGridViewTextBoxColumn";
-            this.touJiangZhuShuDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // erJiangDataGridViewTextBoxColumn
-            // 
-            this.erJiangDataGridViewTextBoxColumn.DataPropertyName = "ErJiang";
-            this.erJiangDataGridViewTextBoxColumn.HeaderText = "ErJiang";
-            this.erJiangDataGridViewTextBoxColumn.Name = "erJiangDataGridViewTextBoxColumn";
-            this.erJiangDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // erJiangZhuShuDataGridViewTextBoxColumn
-            // 
-            this.erJiangZhuShuDataGridViewTextBoxColumn.DataPropertyName = "ErJiangZhuShu";
-            this.erJiangZhuShuDataGridViewTextBoxColumn.HeaderText = "ErJiangZhuShu";
-            this.erJiangZhuShuDataGridViewTextBoxColumn.Name = "erJiangZhuShuDataGridViewTextBoxColumn";
-            this.erJiangZhuShuDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sanJiangDataGridViewTextBoxColumn
-            // 
-            this.sanJiangDataGridViewTextBoxColumn.DataPropertyName = "SanJiang";
-            this.sanJiangDataGridViewTextBoxColumn.HeaderText = "SanJiang";
-            this.sanJiangDataGridViewTextBoxColumn.Name = "sanJiangDataGridViewTextBoxColumn";
-            this.sanJiangDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sanJiangZhuShuDataGridViewTextBoxColumn
-            // 
-            this.sanJiangZhuShuDataGridViewTextBoxColumn.DataPropertyName = "SanJiangZhuShu";
-            this.sanJiangZhuShuDataGridViewTextBoxColumn.HeaderText = "SanJiangZhuShu";
-            this.sanJiangZhuShuDataGridViewTextBoxColumn.Name = "sanJiangZhuShuDataGridViewTextBoxColumn";
-            this.sanJiangZhuShuDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // allBollsDataGridViewTextBoxColumn
-            // 
-            this.allBollsDataGridViewTextBoxColumn.DataPropertyName = "AllBolls";
-            this.allBollsDataGridViewTextBoxColumn.HeaderText = "AllBolls";
-            this.allBollsDataGridViewTextBoxColumn.Name = "allBollsDataGridViewTextBoxColumn";
-            this.allBollsDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // doubleBollBindingSource
-            // 
-            this.doubleBollBindingSource.DataSource = typeof(cai.DoubleBoll);
-            // 
             // bt_syncRecent
             // 
             this.bt_syncRecent.Location = new System.Drawing.Point(673, 9);
@@ -354,24 +189,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn kaiJiangRiQiDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button Bt_report;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn openDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstProvinceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qiShuDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn saleTotalDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn red1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn red2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn red3DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn red4DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn red5DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn red6DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn blueDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn touJiangDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn touJiangZhuShuDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn erJiangDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn erJiangZhuShuDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sanJiangDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sanJiangZhuShuDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn allBollsDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource doubleBollBindingSource;
         private System.Windows.Forms.Button bt_myreport;
         private System.Windows.Forms.Button bt_syncRecent;
