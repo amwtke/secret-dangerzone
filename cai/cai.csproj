@@ -62,8 +62,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>libs\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="netchartdir">
-      <HintPath>D:\Program Files (x86)\ChartDirector\bin\netchartdir.dll</HintPath>
+    <Reference Include="netchartdir, Version=5.0.4.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\netchartdir.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -408,6 +409,7 @@
     <Content Include="libs\HtmlAgilityPack.dll" />
     <Content Include="libs\HtmlAgilityPack.XML" />
     <Content Include="libs\log4net.dll" />
+    <Content Include="libs\netchartdir.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
