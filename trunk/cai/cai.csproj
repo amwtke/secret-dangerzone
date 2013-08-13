@@ -92,6 +92,7 @@
     <Compile Include="Helper\HttpHelper.cs" />
     <Compile Include="Helper\ICompare.cs" />
     <Compile Include="Helper\LogHelper.cs" />
+    <Compile Include="Message\Messaging.cs" />
     <Compile Include="reports\ParamViewer.cs">
       <SubType>Form</SubType>
     </Compile>
