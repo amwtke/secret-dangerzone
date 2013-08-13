@@ -71,8 +71,8 @@ namespace cai
 
         private void Add_Click(object sender, EventArgs e)
         {
-            Detail d = new Detail();
-            d.Show();
+            FunctionForm form = new FunctionForm();
+            form.ShowDialog();
         }
         private DataView FillDataView(DoubleBoll[] balls)
         {

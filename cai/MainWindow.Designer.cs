@@ -33,15 +33,15 @@
             this.components = new System.ComponentModel.Container();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.doubleBollBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.Add = new System.Windows.Forms.Button();
+            this.bt_selectfunction = new System.Windows.Forms.Button();
             this.Bt_duplicate = new System.Windows.Forms.Button();
             this.tb_search = new System.Windows.Forms.TextBox();
             this.Bt_report = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.bt_myreport = new System.Windows.Forms.Button();
             this.bt_syncRecent = new System.Windows.Forms.Button();
+            this.doubleBollBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doubleBollBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -72,10 +72,6 @@
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             this.dataGridView1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyUp);
             // 
-            // doubleBollBindingSource
-            // 
-            this.doubleBollBindingSource.DataSource = typeof(cai.DoubleBoll);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -85,15 +81,15 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "0";
             // 
-            // Add
+            // bt_selectfunction
             // 
-            this.Add.Location = new System.Drawing.Point(12, 9);
-            this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(75, 23);
-            this.Add.TabIndex = 4;
-            this.Add.Text = "加入";
-            this.Add.UseVisualStyleBackColor = true;
-            this.Add.Click += new System.EventHandler(this.Add_Click);
+            this.bt_selectfunction.Location = new System.Drawing.Point(12, 9);
+            this.bt_selectfunction.Name = "bt_selectfunction";
+            this.bt_selectfunction.Size = new System.Drawing.Size(75, 23);
+            this.bt_selectfunction.TabIndex = 4;
+            this.bt_selectfunction.Text = "功能";
+            this.bt_selectfunction.UseVisualStyleBackColor = true;
+            this.bt_selectfunction.Click += new System.EventHandler(this.Add_Click);
             // 
             // Bt_duplicate
             // 
@@ -153,6 +149,10 @@
             this.bt_syncRecent.UseVisualStyleBackColor = true;
             this.bt_syncRecent.Click += new System.EventHandler(this.bt_syncRecent_Click);
             // 
+            // doubleBollBindingSource
+            // 
+            this.doubleBollBindingSource.DataSource = typeof(cai.DoubleBoll);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -164,7 +164,7 @@
             this.Controls.Add(this.Bt_report);
             this.Controls.Add(this.tb_search);
             this.Controls.Add(this.Bt_duplicate);
-            this.Controls.Add(this.Add);
+            this.Controls.Add(this.bt_selectfunction);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
@@ -183,7 +183,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button Add;
+        private System.Windows.Forms.Button bt_selectfunction;
         private System.Windows.Forms.Button Bt_duplicate;
         private System.Windows.Forms.TextBox tb_search;
         private System.Windows.Forms.DataGridViewTextBoxColumn kaiJiangRiQiDataGridViewTextBoxColumn;
