@@ -81,6 +81,12 @@
     <Compile Include="Compare\DoubleColorCompare.cs" />
     <Compile Include="Compare\ICaiCompare.cs" />
     <Compile Include="DataModel\IDataType.cs" />
+    <Compile Include="Forms\FunctionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FunctionForm.Designer.cs">
+      <DependentUpon>FunctionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\CaiAttributes.cs" />
     <Compile Include="Helper\DBHelper.cs" />
     <Compile Include="Helper\HttpHelper.cs" />
@@ -323,6 +329,9 @@
     <Compile Include="Report\IReport.cs" />
     <EmbeddedResource Include="Detail.resx">
       <DependentUpon>Detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FunctionForm.resx">
+      <DependentUpon>FunctionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reports\ParamViewer.resx">
       <DependentUpon>ParamViewer.cs</DependentUpon>
