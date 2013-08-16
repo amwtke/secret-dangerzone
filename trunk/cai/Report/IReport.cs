@@ -7,6 +7,6 @@ namespace cai.Report
 {
     public interface IReport
     {
-        void Compute();
+        void Compute(object o);
     }
 }

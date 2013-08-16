@@ -350,7 +350,10 @@ namespace cai
         private void bt_myreport_Click(object sender, EventArgs e)
         {
             cai.Report.IReport b = new Report.BasicReport();
-            b.Compute();
+            b.Compute(new object());
+            cai.Report.IReport blue = new Report.BuleNextReport();
+            blue.Compute(10);
+            MessageBox.Show("OK");
         }
 
         private void bt_syncRecent_Click(object sender, EventArgs e)

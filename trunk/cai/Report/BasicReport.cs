@@ -15,7 +15,7 @@ namespace cai.Report
                 LOGGER = log4net.LogManager.GetLogger(typeof(BasicReport));
             }
         }
-        public void Compute()
+        public void Compute(object o)
         {
             if (LOGGER.IsInfoEnabled)
             {
