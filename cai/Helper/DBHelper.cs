@@ -546,6 +546,27 @@ namespace cai
                 throw ex;
             }
         }
+        public static T[] GetALL<T>(IObjectContainer db, IQueryComparator compare)
+        {
+            try
+            {
+                IQuery retQuery = db.Query();
+                retQuery.Constrain(typeof(T));
+                //retQuery.Descend(fieldName);
+                retQuery.SortBy(compare);
+                IObjectSet result = retQuery.Execute();
+                T[] retArray = new T[result.Count];
+                for (int i = 0; i < result.Count; i++)
+                {
+                    retArray[i] = (T)result[i];
+                }
+                return retArray;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         #endregion
 
         public static T GetObjectFromString<T>(string clazz)

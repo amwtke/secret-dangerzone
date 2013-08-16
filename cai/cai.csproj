@@ -327,6 +327,7 @@
     <Compile Include="reports\zoomscrolldemo.cs" />
     <Compile Include="reports\zoomscrolldemo2.cs" />
     <Compile Include="Report\BasicReport.cs" />
+    <Compile Include="Report\BuleNextReport.cs" />
     <Compile Include="Report\IReport.cs" />
     <EmbeddedResource Include="Detail.resx">
       <DependentUpon>Detail.cs</DependentUpon>

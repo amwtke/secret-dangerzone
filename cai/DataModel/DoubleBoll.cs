@@ -207,5 +207,10 @@ namespace cai
         {
             get { return QiShu; }
         }
+        public override string ToString()
+        {
+            return Red1.ToString() + " " + Red2.ToString() + " " + Red3.ToString() + " "
+                + Red4.ToString() + " " + Red5.ToString() + " " + Red6.ToString() + " " + Blue.ToString();
+        }
     }
 }
